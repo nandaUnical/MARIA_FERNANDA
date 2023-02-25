@@ -1,8 +1,11 @@
 #Application to work with word frecuencies in a collection of .txt files
 
 import os
+import sys
 
 text_path = r"C:\Users\hp\Documents\!Master\Agile\!!Second Apello\ejemplos" 
+
+# text_path = sys.argv[1]
 
 def read_text (text_path):
     #If the input is a list of .txt files put all the text into a single dicc
@@ -11,18 +14,24 @@ def read_text (text_path):
 
     files_words_frecuency = {}
     files_content = []
+    files_content_split = []
+    
 
-    if type(text_path) == 'str':  
+    if str(type(text_path)) == "<class 'str'>" :  
         for filename in filter(lambda p: p.endswith("txt"), os.listdir(text_path)):
             filepath = os.path.join(text_path, filename)
+            #print("File path: ",filepath)
             with open(filepath, mode='r') as f:
                 files_content += [f.read()]
-    elif type(text_path) == 'list':
+    elif str(type(text_path)) == "<class 'list'>" :
         for filename in text_path :
             with open(filename, mode='r') as f:
                 files_content += [f.read()]
-
+        
     for i in files_content:
+        files_content_split += i.split()
+
+    for i in files_content_split:
         if i.lower() in files_words_frecuency:
             files_words_frecuency[i.lower()] += 1
         else:
@@ -30,8 +39,8 @@ def read_text (text_path):
 
     return files_words_frecuency
 
-#a = read_text(text_path)
-#print (a)
+a = read_text(text_path)
+print (a)
 
 
 '''
