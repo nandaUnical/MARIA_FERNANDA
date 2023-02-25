@@ -1,5 +1,6 @@
 import pytest
 import code
 
-def test_nothing () :
-    print('Hello World')
+def test_read_text_path_folder () :
+    a = read_text ('C:\Users\hp\Documents\!Master\Agile\!!Second Apello\ejemplos')
+    assert if a , 'Diccionary is empty'
