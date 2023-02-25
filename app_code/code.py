@@ -2,7 +2,7 @@
 
 import os
 
-path = 'C:\Users\hp\Documents\!Master\Agile\!!Second Apello\ejemplos' 
+path = r"C:\Users\hp\Documents\!Master\Agile\!!Second Apello\ejemplos" 
 
 def read_text (text_path):
     #If the input is a list of .txt files put all the text into a single dicc
