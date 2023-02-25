@@ -1,5 +1,7 @@
 import pytest
-import code
+#import code
+sys.path.insert(1,'C:/Users/hp/Documents/!Master/Agile/!!Second Apello/MARIA_FERNANDA\app_code')
+
 
 def test_read_text_path_folder () :
     a = code.read_text (r"C:\Users\hp\Documents\!Master\Agile\!!Second Apello\ejemplos")

@@ -5,7 +5,11 @@ import sys
 
 text_path = r"C:\Users\hp\Documents\!Master\Agile\!!Second Apello\ejemplos" 
 
-# text_path = sys.argv[1]
+if len(sys.argv) == 2 :
+        text_path = sys.argv[1]
+elif len(sys.argv) > 2:
+    for i in len(sys.argv) :
+        text_path += i
 
 def read_text (text_path):
     #If the input is a list of .txt files put all the text into a single dicc
@@ -39,8 +43,8 @@ def read_text (text_path):
 
     return files_words_frecuency
 
-a = read_text(text_path)
-print (a)
+def show_frecuency (text_path) :
+
 
 
 '''
